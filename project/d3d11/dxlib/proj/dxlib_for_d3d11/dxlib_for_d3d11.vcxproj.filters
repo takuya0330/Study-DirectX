@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="asset">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="external">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="asset\shader">
+      <UniqueIdentifier>{4a658f74-649c-4d9f-82ef-3d73c71fe59d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\app">
+      <UniqueIdentifier>{c098092c-b430-4369-8bdc-d483f2cbf04a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\engine">
+      <UniqueIdentifier>{9acc9326-8313-4469-a0e6-a66967459928}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\app\d3d11">
+      <UniqueIdentifier>{34079015-3c2c-4a09-afa6-ffeb6ef56783}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\asset\shader\static_mesh_pc.hlsli">
+      <Filter>asset\shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="..\..\..\..\..\asset\shader\static_mesh_pc_ps.hlsl">
+      <Filter>asset\shader</Filter>
+    </FxCompile>
+    <FxCompile Include="..\..\..\..\..\asset\shader\static_mesh_pc_vs.hlsl">
+      <Filter>asset\shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\source\engine\camera.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\debug.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\dxgi_api.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\file.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\light.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\math.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\matrix.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\static_mesh.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\vector.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\vertex.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\window.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\engine\d3d11_api.h">
+      <Filter>source\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\app\scene_base.h">
+      <Filter>source\app</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\source\engine\dxgi_api.cpp">
+      <Filter>source\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\engine\file.cpp">
+      <Filter>source\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\engine\window.cpp">
+      <Filter>source\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\engine\d3d11_api.cpp">
+      <Filter>source\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\app\d3d11\main.cpp">
+      <Filter>source\app\d3d11</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

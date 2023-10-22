@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dxlib_for_d3d11", "proj\dxlib_for_d3d11\dxlib_for_d3d11.vcxproj", "{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Debug|x64.ActiveCfg = Debug|x64
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Debug|x64.Build.0 = Debug|x64
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Debug|x86.ActiveCfg = Debug|Win32
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Debug|x86.Build.0 = Debug|Win32
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Release|x64.ActiveCfg = Release|x64
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Release|x64.Build.0 = Release|x64
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Release|x86.ActiveCfg = Release|Win32
+		{CD24EE5E-8BF1-47A4-8317-F189FBBD6023}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8076339F-AE80-4827-977F-CE95652C766F}
+	EndGlobalSection
+EndGlobal
