@@ -227,6 +227,8 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
 int main(int argc, char* argv[])
 {
+	ENABLE_CRT_DEBUG_FLAG;
+
 	// create application window.
 	auto wcex = dxlib::win32::register_window_class_ex(
 	    L"DirectX",
