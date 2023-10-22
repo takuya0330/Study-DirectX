@@ -166,7 +166,6 @@ public:
 		const uint32_t offset = 0;
 		m_d3d11_device_context->IASetInputLayout(m_d3d11_input_layout.Get());
 		m_d3d11_device_context->IASetVertexBuffers(0, 1, m_d3d11_vertex_buffer.GetAddressOf(), &stride, &offset);
-		m_d3d11_device_context->IASetIndexBuffer(m_d3d11_index_buffer.Get(), DXGI_FORMAT_R16_UINT, 0);
 		m_d3d11_device_context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 		m_d3d11_device_context->VSSetShader(m_d3d11_vertex_shader.Get(), nullptr, 0);
 		m_d3d11_device_context->PSSetShader(m_d3d11_pixel_shader.Get(), nullptr, 0);
@@ -177,7 +176,6 @@ private:
 	ID3D11Device*                     m_d3d11_device;
 	ID3D11DeviceContext*              m_d3d11_device_context;
 	MSWRL::ComPtr<ID3D11Buffer>       m_d3d11_vertex_buffer;
-	MSWRL::ComPtr<ID3D11Buffer>       m_d3d11_index_buffer;
 	MSWRL::ComPtr<ID3D11VertexShader> m_d3d11_vertex_shader;
 	MSWRL::ComPtr<ID3D11InputLayout>  m_d3d11_input_layout;
 	MSWRL::ComPtr<ID3D11PixelShader>  m_d3d11_pixel_shader;
@@ -188,8 +186,6 @@ app::scene_base* get_next_scene(int index, ID3D11Device* d3d11_device, ID3D11Dev
 	switch (index) {
 	case 0:
 		return new d3d11_scene_triangle(d3d11_device, d3d11_device_context);
-	case 1:
-		//return new app::d3d11_scene_cube(d3d11_device, d3d11_device_context);
 	default:
 		break;
 	}

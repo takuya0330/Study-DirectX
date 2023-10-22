@@ -220,7 +220,7 @@ public:
 	d3d12_scene_triangle(ID3D12Device* d3d12_device, ID3D12GraphicsCommandList* d3d12_graphics_command_list)
 	    : m_d3d12_device(d3d12_device)
 	    , m_d3d12_graphics_command_list(d3d12_graphics_command_list)
-	    , m_d3d12_vertex_buffer_resource()
+	    , m_d3d12_vertex_buffer()
 	    , m_d3d12_root_signature()
 	    , m_d3d12_pipeline_state()
 	{
@@ -266,14 +266,14 @@ public:
 		    &resource_desc,
 		    D3D12_RESOURCE_STATE_GENERIC_READ,
 		    nullptr,
-		    IID_PPV_ARGS(m_d3d12_vertex_buffer_resource.GetAddressOf()));
+		    IID_PPV_ARGS(m_d3d12_vertex_buffer.GetAddressOf()));
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 		{
 			void* mapped = nullptr;
-			hr           = m_d3d12_vertex_buffer_resource->Map(0, nullptr, &mapped);
+			hr           = m_d3d12_vertex_buffer->Map(0, nullptr, &mapped);
 			ASSERT_RETURN(SUCCEEDED(hr), false);
 			memcpy(mapped, vertices, sizeof(vertices));
-			m_d3d12_vertex_buffer_resource->Unmap(0, nullptr);
+			m_d3d12_vertex_buffer->Unmap(0, nullptr);
 		}
 
 		MSWRL::ComPtr<ID3DBlob> vertex_shader;
@@ -365,7 +365,7 @@ public:
 		m_d3d12_graphics_command_list->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 		D3D12_VERTEX_BUFFER_VIEW vbv = {};
 		{
-			vbv.BufferLocation = m_d3d12_vertex_buffer_resource->GetGPUVirtualAddress();
+			vbv.BufferLocation = m_d3d12_vertex_buffer->GetGPUVirtualAddress();
 			vbv.SizeInBytes    = sizeof(dxlib::geometry::vertex_pc) * 3;
 			vbv.StrideInBytes  = sizeof(dxlib::geometry::vertex_pc);
 		}
@@ -376,7 +376,7 @@ public:
 private:
 	ID3D12Device*                      m_d3d12_device;
 	ID3D12GraphicsCommandList*         m_d3d12_graphics_command_list;
-	MSWRL::ComPtr<ID3D12Resource>      m_d3d12_vertex_buffer_resource;
+	MSWRL::ComPtr<ID3D12Resource>      m_d3d12_vertex_buffer;
 	MSWRL::ComPtr<ID3D12RootSignature> m_d3d12_root_signature;
 	MSWRL::ComPtr<ID3D12PipelineState> m_d3d12_pipeline_state;
 };
@@ -386,8 +386,6 @@ app::scene_base* get_next_scene(int index, ID3D12Device* d3d12_device, ID3D12Gra
 	switch (index) {
 	case 0:
 		return new d3d12_scene_triangle(d3d12_device, d3d12_graphics_command_list);
-	case 1:
-		//return new app::d3d11_scene_cube(d3d11_device, d3d11_device_context);
 	default:
 		break;
 	}
