@@ -26,6 +26,7 @@
     <ClCompile Include="..\..\..\..\..\source\engine\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\source\app\scene_base.h" />
     <ClInclude Include="..\..\..\..\..\source\engine\camera.h" />
     <ClInclude Include="..\..\..\..\..\source\engine\d3d12_api.h" />
     <ClInclude Include="..\..\..\..\..\source\engine\debug.h" />
