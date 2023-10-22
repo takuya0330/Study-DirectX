@@ -284,6 +284,15 @@ public:
 			m_d3d12_vertex_buffer_resource->Unmap(0, nullptr);
 		}
 
+		MSWRL::ComPtr<ID3DBlob> vertex_shader;
+		hr = dxlib::d3d12::create_vertex_shader_from_hlsl(
+		    m_d3d12_device,
+		    L"../../../../../asset/shader/static_mesh_pc_vs.hlsl",
+		    "main",
+		    "vs_5_0",
+		    vertex_shader.GetAddressOf());
+		ASSERT_RETURN(SUCCEEDED(hr), false);
+
 		MSWRL::ComPtr<ID3DBlob> pixel_shader;
 		hr = dxlib::d3d12::create_pixel_shader_from_hlsl(
 		    m_d3d12_device,
@@ -291,16 +300,6 @@ public:
 		    "main",
 		    "ps_5_0",
 		    pixel_shader.GetAddressOf());
-		ASSERT_RETURN(SUCCEEDED(hr), false);
-
-		MSWRL::ComPtr<ID3DBlob>   vertex_shader;
-		D3D12_INPUT_ELEMENT_DESCS input_element_descs = {};
-		hr                                            = dxlib::d3d12::create_vertex_shader_from_hlsl(
-            m_d3d12_device,
-            L"../../../../../asset/shader/static_mesh_pc_vs.hlsl",
-            "main",
-            "vs_5_0",
-            vertex_shader.GetAddressOf());
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 
 		D3D12_ROOT_SIGNATURE_DESC root_signature_desc = {};
@@ -319,7 +318,6 @@ public:
 			{"POSITION", 0,    DXGI_FORMAT_R32G32B32_FLOAT, 0, D3D12_APPEND_ALIGNED_ELEMENT, D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0},
 			{   "COLOR", 0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, D3D12_APPEND_ALIGNED_ELEMENT, D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA, 0},
 		};
-
 		D3D12_RENDER_TARGET_BLEND_DESC render_target_blend_desc = {};
 		{
 			render_target_blend_desc.BlendEnable           = false;
