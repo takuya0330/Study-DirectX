@@ -19,11 +19,11 @@
     <Filter Include="source\app">
       <UniqueIdentifier>{c098092c-b430-4369-8bdc-d483f2cbf04a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="source\engine">
-      <UniqueIdentifier>{9acc9326-8313-4469-a0e6-a66967459928}</UniqueIdentifier>
-    </Filter>
     <Filter Include="source\app\d3d11">
       <UniqueIdentifier>{34079015-3c2c-4a09-afa6-ffeb6ef56783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\dxlib">
+      <UniqueIdentifier>{0e0fa4fe-5a5f-4ca4-90e9-dab0c08256a8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,61 +40,61 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\source\engine\camera.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\debug.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\dxgi_api.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\file.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\light.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\math.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\matrix.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\static_mesh.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\vector.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\vertex.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\window.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\source\engine\d3d11_api.h">
-      <Filter>source\engine</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\..\..\source\app\scene_base.h">
       <Filter>source\app</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\camera.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\d3d11_api.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\debug.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\dxgi_api.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\file.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\light.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\math.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\matrix.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\static_mesh.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\vector.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\vertex.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\dxlib\window.h">
+      <Filter>source\dxlib</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\source\engine\dxgi_api.cpp">
-      <Filter>source\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\source\engine\file.cpp">
-      <Filter>source\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\source\engine\window.cpp">
-      <Filter>source\engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\source\engine\d3d11_api.cpp">
-      <Filter>source\engine</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\source\app\d3d11\main.cpp">
       <Filter>source\app\d3d11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\dxlib\d3d11_api.cpp">
+      <Filter>source\dxlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\dxlib\dxgi_api.cpp">
+      <Filter>source\dxlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\dxlib\file.cpp">
+      <Filter>source\dxlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\dxlib\window.cpp">
+      <Filter>source\dxlib</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

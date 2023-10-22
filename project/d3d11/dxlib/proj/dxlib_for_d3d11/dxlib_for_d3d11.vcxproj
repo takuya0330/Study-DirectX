@@ -146,25 +146,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\source\app\scene_base.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\camera.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\d3d11_api.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\debug.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\dxgi_api.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\file.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\light.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\math.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\matrix.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\static_mesh.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\vector.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\vertex.h" />
-    <ClInclude Include="..\..\..\..\..\source\engine\window.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\camera.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\d3d11_api.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\debug.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\dxgi_api.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\file.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\light.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\math.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\matrix.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\static_mesh.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\vector.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\vertex.h" />
+    <ClInclude Include="..\..\..\..\..\source\dxlib\window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\source\app\d3d11\main.cpp" />
-    <ClCompile Include="..\..\..\..\..\source\engine\d3d11_api.cpp" />
-    <ClCompile Include="..\..\..\..\..\source\engine\dxgi_api.cpp" />
-    <ClCompile Include="..\..\..\..\..\source\engine\file.cpp" />
-    <ClCompile Include="..\..\..\..\..\source\engine\window.cpp" />
+    <ClCompile Include="..\..\..\..\..\source\dxlib\d3d11_api.cpp" />
+    <ClCompile Include="..\..\..\..\..\source\dxlib\dxgi_api.cpp" />
+    <ClCompile Include="..\..\..\..\..\source\dxlib\file.cpp" />
+    <ClCompile Include="..\..\..\..\..\source\dxlib\window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

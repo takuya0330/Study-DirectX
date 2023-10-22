@@ -1,10 +1,10 @@
 #include <memory>
 
 #include "app/scene_base.h"
-#include "engine/d3d12_api.h"
-#include "engine/debug.h"
-#include "engine/static_mesh.h"
-#include "engine/window.h"
+#include "dxlib/d3d12_api.h"
+#include "dxlib/debug.h"
+#include "dxlib/static_mesh.h"
+#include "dxlib/window.h"
 
 namespace {
 
@@ -167,7 +167,6 @@ struct d3d12_context
 		d3d12_back_buffer_view.ptr += static_cast<size_t>(back_buffer_index * d3d12_back_buffer_heap_size);
 		d3d12_graphics_command_list->OMSetRenderTargets(1, &d3d12_back_buffer_view, false, nullptr);
 		d3d12_graphics_command_list->ClearRenderTargetView(d3d12_back_buffer_view, default_clear_color, 0, nullptr);
-
 		d3d12_graphics_command_list->RSSetViewports(1, &d3d12_viewport);
 		d3d12_graphics_command_list->RSSetScissorRects(1, &d3d12_scissor);
 	}
@@ -429,7 +428,7 @@ int main(int argc, char* argv[])
 	// create application window.
 	auto wcex = dxlib::win32::register_window_class_ex(
 	    L"DirectX",
-	    &WndProc);
+	    WndProc);
 	auto hwnd = dxlib::win32::create_window(
 	    L"DirectX",
 	    L"D3D12 Sandbox",
@@ -445,7 +444,7 @@ int main(int argc, char* argv[])
 	d3d12_context context;
 	ASSERT_RETURN(context.initialize(hwnd), -1);
 
-	// create scene
+	// create scene.
 	constexpr const char* scene_type[] = {
 		"Triangle",
 		"Cube",
@@ -485,6 +484,7 @@ int main(int argc, char* argv[])
 		context.end_frame();
 	}
 
+	// destroy window.
 	dxlib::win32::destroy_window(wcex, hwnd);
 
 	return 0;

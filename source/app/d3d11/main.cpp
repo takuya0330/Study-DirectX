@@ -1,10 +1,10 @@
 #include <memory>
 
 #include "app/scene_base.h"
-#include "engine/d3d11_api.h"
-#include "engine/debug.h"
-#include "engine/static_mesh.h"
-#include "engine/window.h"
+#include "dxlib/d3d11_api.h"
+#include "dxlib/debug.h"
+#include "dxlib/static_mesh.h"
+#include "dxlib/window.h"
 
 namespace {
 
@@ -134,15 +134,15 @@ public:
 			subresource.SysMemSlicePitch = 0;
 		}
 		auto hr = dxlib::d3d11::create_buffer(
-			m_d3d11_device, 
-			&buffer_desc, 
-			&subresource, 
-			m_d3d11_vertex_buffer.GetAddressOf());
+		    m_d3d11_device,
+		    &buffer_desc,
+		    &subresource,
+		    m_d3d11_vertex_buffer.GetAddressOf());
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 
 		hr = dxlib::d3d11::create_vertex_shader_from_hlsl(
-			m_d3d11_device, 
-			L"../../asset/shader/static_mesh_pc_vs.hlsl",
+		    m_d3d11_device,
+		    L"../../asset/shader/static_mesh_pc_vs.hlsl",
 		    "main",
 		    "vs_5_0",
 		    m_d3d11_vertex_shader.GetAddressOf(),
@@ -150,8 +150,8 @@ public:
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 
 		hr = dxlib::d3d11::create_pixel_shader_from_hlsl(
-			m_d3d11_device, 
-			L"../../asset/shader/static_mesh_pc_ps.hlsl",
+		    m_d3d11_device,
+		    L"../../asset/shader/static_mesh_pc_ps.hlsl",
 		    "main",
 		    "ps_5_0",
 		    m_d3d11_pixel_shader.GetAddressOf());
@@ -246,7 +246,7 @@ int main(int argc, char* argv[])
 	d3d11_context context;
 	ASSERT_RETURN(context.initialize(hwnd), -1);
 
-	// create scene
+	// create scene.
 	constexpr const char* scene_type[] = {
 		"Triangle",
 		"Cube",
@@ -286,6 +286,7 @@ int main(int argc, char* argv[])
 		context.end_frame();
 	}
 
+	// destroy window.
 	dxlib::win32::destroy_window(wcex, hwnd);
 
 	return 0;
