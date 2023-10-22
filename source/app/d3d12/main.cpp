@@ -1,5 +1,6 @@
 #include <memory>
 
+#include "app/scene_base.h"
 #include "engine/d3d12_api.h"
 #include "engine/debug.h"
 #include "engine/static_mesh.h"
@@ -214,17 +215,7 @@ struct d3d12_context
 	}
 };
 
-class scene_base
-{
-public:
-	virtual ~scene_base() = default;
-
-	virtual bool initialize() = 0;
-
-	virtual void update() = 0;
-};
-
-class d3d12_scene_triangle : public scene_base
+class d3d12_scene_triangle : public app::scene_base
 {
 public:
 	d3d12_scene_triangle(ID3D12Device* d3d12_device, ID3D12GraphicsCommandList* d3d12_graphics_command_list)
@@ -389,7 +380,7 @@ private:
 	MSWRL::ComPtr<ID3D12PipelineState> m_d3d12_pipeline_state;
 };
 
-scene_base* get_next_scene(int index, ID3D12Device* d3d12_device, ID3D12GraphicsCommandList* d3d12_graphics_command_list)
+app::scene_base* get_next_scene(int index, ID3D12Device* d3d12_device, ID3D12GraphicsCommandList* d3d12_graphics_command_list)
 {
 	switch (index) {
 	case 0:
@@ -462,7 +453,7 @@ int main(int argc, char* argv[])
 	int scene_type_index      = 0;
 	int scene_type_prev_index = scene_type_index;
 
-	std::unique_ptr<scene_base> scene(get_next_scene(
+	std::unique_ptr<app::scene_base> scene(get_next_scene(
 	    scene_type_index,
 	    context.d3d12_device.Get(),
 	    context.d3d12_graphics_command_list.Get()));
