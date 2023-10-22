@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\source\app\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\source\app\d3d12\main.cpp" />
     <ClCompile Include="..\..\..\..\..\source\engine\d3d12_api.cpp" />
     <ClCompile Include="..\..\..\..\..\source\engine\dxgi_api.cpp" />
     <ClCompile Include="..\..\..\..\..\source\engine\file.cpp" />

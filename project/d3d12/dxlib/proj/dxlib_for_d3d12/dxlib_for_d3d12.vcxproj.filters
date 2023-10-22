@@ -19,6 +19,9 @@
     <Filter Include="external">
       <UniqueIdentifier>{336bc5be-ae51-420d-aef7-82866935826f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="source\app\d3d12">
+      <UniqueIdentifier>{5caabde6-5cd2-4315-bd28-ada33b8a7cc0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\source\engine\d3d12_api.cpp">
@@ -30,11 +33,11 @@
     <ClCompile Include="..\..\..\..\..\source\engine\window.cpp">
       <Filter>source\engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\source\app\main.cpp">
-      <Filter>source\app</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\..\..\source\engine\file.cpp">
       <Filter>source\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\app\d3d12\main.cpp">
+      <Filter>source\app\d3d12</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
