@@ -302,7 +302,7 @@ public:
 		    m_d3d12_device,
 		    &root_signature_desc,
 		    D3D_ROOT_SIGNATURE_VERSION_1_0,
-		    0,
+		    dxlib::d3d12::default_node_mask,
 		    m_d3d12_root_signature.GetAddressOf());
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 
