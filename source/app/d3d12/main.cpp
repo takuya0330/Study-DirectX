@@ -224,6 +224,8 @@ public:
 	    , m_d3d12_root_signature()
 	    , m_d3d12_pipeline_state()
 	{
+		ASSERT(m_d3d12_device);
+		ASSERT(m_d3d12_graphics_command_list);
 	}
 
 	~d3d12_scene_triangle() = default;
