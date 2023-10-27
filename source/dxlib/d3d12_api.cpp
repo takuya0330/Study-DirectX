@@ -233,6 +233,31 @@ HRESULT create_fence(
 	return hr;
 }
 
+HRESULT create_resource(
+    ID3D12Device*                d3d12_device,
+    const D3D12_HEAP_PROPERTIES* d3d12_heap_properties,
+    const D3D12_HEAP_FLAGS       d3d12_heap_flags,
+    const D3D12_RESOURCE_DESC*   d3d12_resource_desc,
+    const D3D12_RESOURCE_STATES  d3d12_resource_states,
+    const D3D12_CLEAR_VALUE*     d3d12_clear_color,
+    ID3D12Resource**             d3d12_resource)
+{
+	ASSERT_RETURN(d3d12_device, E_UNEXPECTED);
+
+	HRESULT hr = S_OK;
+
+	hr = d3d12_device->CreateCommittedResource(
+	    d3d12_heap_properties,
+	    d3d12_heap_flags,
+	    d3d12_resource_desc,
+	    d3d12_resource_states,
+	    d3d12_clear_color,
+	    IID_PPV_ARGS(d3d12_resource));
+	RETURN_IF_FAILED(hr, hr);
+
+	return hr;
+}
+
 HRESULT create_root_signature(
     ID3D12Device*                    d3d12_device,
     const D3D12_ROOT_SIGNATURE_DESC* d3d12_root_signature_desc,

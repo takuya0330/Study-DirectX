@@ -260,13 +260,14 @@ public:
 			resource_desc.Layout             = D3D12_TEXTURE_LAYOUT_ROW_MAJOR;
 			resource_desc.Flags              = D3D12_RESOURCE_FLAG_NONE;
 		}
-		auto hr = m_d3d12_device->CreateCommittedResource(
+		auto hr = dxlib::d3d12::create_resource(
+		    m_d3d12_device,
 		    &heap_properties,
 		    D3D12_HEAP_FLAG_NONE,
 		    &resource_desc,
 		    D3D12_RESOURCE_STATE_GENERIC_READ,
 		    nullptr,
-		    IID_PPV_ARGS(m_d3d12_vertex_buffer.GetAddressOf()));
+		    m_d3d12_vertex_buffer.GetAddressOf());
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 		{
 			void* mapped = nullptr;

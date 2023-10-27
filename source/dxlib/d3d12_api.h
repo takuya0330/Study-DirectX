@@ -113,6 +113,26 @@ HRESULT create_fence(
     ID3D12Device* d3d12_device,
     ID3D12Fence** d3d12_fence);
 
+//! \brief リソースの作成
+//!
+//! \param[in] d3d12_device
+//! \param[in] d3d12_heap_properties
+//! \param[in] d3d12_heap_flags
+//! \param[in] d3d12_resource_desc
+//! \param[in] d3d12_resource_states
+//! \param[in] d3d12_clear_color
+//! \param[out] d3d12_resource
+//!
+//! \ret HRESULT
+HRESULT create_resource(
+    ID3D12Device*                d3d12_device,
+    const D3D12_HEAP_PROPERTIES* d3d12_heap_properties,
+    const D3D12_HEAP_FLAGS       d3d12_heap_flags,
+    const D3D12_RESOURCE_DESC*   d3d12_resource_desc,
+    const D3D12_RESOURCE_STATES  d3d12_resource_states,
+    const D3D12_CLEAR_VALUE*     d3d12_clear_color,
+    ID3D12Resource**             d3d12_resource);
+
 //! \brief ルートシグネチャの作成
 //!
 //! \param[in] d3d12_device
