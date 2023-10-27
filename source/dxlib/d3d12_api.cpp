@@ -277,18 +277,31 @@ HRESULT create_graphics_pipeline_state(
 	return hr;
 }
 
+#if 1
+HRESULT create_vertex_shader_from_hlsl(
+    const wchar_t* filename,
+    const char*    entry_point,
+    const char*    shader_model,
+    ID3DBlob**     d3d12_vertex_shader)
+{
+	HRESULT hr = compile_shader(d3d12_vertex_shader, filename, entry_point, shader_model);
+	RETURN_IF_FAILED(hr, hr);
+
+	return hr;
+}
+#else
 HRESULT create_vertex_shader_from_hlsl(
     ID3D12Device*              d3d12_device,
     const wchar_t*             filename,
     const char*                entry_point,
     const char*                shader_model,
-    ID3DBlob**                 d3d12_vertex_shader)
+    ID3DBlob**                 d3d12_vertex_shader,
+    D3D12_INPUT_ELEMENT_DESCS& d3d12_input_element_descs)
 {
 	ASSERT_RETURN(d3d12_device, E_UNEXPECTED);
 
 	HRESULT hr = S_OK;
 
-#if 0
 	MSWRL::ComPtr<ID3DBlob> blob;
 	hr = compile_shader(blob.GetAddressOf(), filename, entry_point, shader_model);
 	RETURN_IF_FAILED(hr, hr);
@@ -326,33 +339,21 @@ HRESULT create_vertex_shader_from_hlsl(
 
 	*d3d12_vertex_shader      = blob.Detach();
 	d3d12_input_element_descs = std::move(input_element_descs);
-#else
-	hr = compile_shader(d3d12_vertex_shader, filename, entry_point, shader_model);
-	RETURN_IF_FAILED(hr, hr);
-#endif
-
 
 	return hr;
 }
+#endif
 
 HRESULT create_pixel_shader_from_hlsl(
-    ID3D12Device*  d3d12_device,
     const wchar_t* filename,
     const char*    entry_point,
     const char*    shader_model,
     ID3DBlob**     d3d12_pixel_shader)
 {
-	ASSERT_RETURN(d3d12_device, E_UNEXPECTED);
-
-	HRESULT hr = S_OK;
-
-	MSWRL::ComPtr<ID3DBlob> blob;
-	hr = compile_shader(blob.GetAddressOf(), filename, entry_point, shader_model);
+	HRESULT hr = compile_shader(d3d12_pixel_shader, filename, entry_point, shader_model);
 	RETURN_IF_FAILED(hr, hr);
 
-	*d3d12_pixel_shader = blob.Detach();
-
-	return S_OK;
+	return hr;
 }
 
 } // namespace d3d12

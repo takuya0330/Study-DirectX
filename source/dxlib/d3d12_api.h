@@ -10,6 +10,8 @@
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "dxguid.lib")
 
+using D3D12_INPUT_ELEMENT_DESCS = std::vector<D3D12_INPUT_ELEMENT_DESC>;
+
 namespace dxlib {
 namespace d3d12 {
 
@@ -139,6 +141,22 @@ HRESULT create_graphics_pipeline_state(
     const D3D12_GRAPHICS_PIPELINE_STATE_DESC* d3d12_graphics_pipeline_state_desc,
     ID3D12PipelineState**                     d3d12_pipeline_state);
 
+#if 1
+//! \brief 頂点シェーダーの作成
+//!
+//! \param[in] d3d12_device
+//! \param[in] filename
+//! \param[in] entry_point
+//! \param[in] shader_model
+//! \param[out] d3d12_vertex_shader
+//!
+//! \ret HRESULT
+HRESULT create_vertex_shader_from_hlsl(
+    const wchar_t* filename,
+    const char*    entry_point,
+    const char*    shader_model,
+    ID3DBlob**     d3d12_vertex_shader);
+#else
 //! \brief 頂点シェーダーの作成
 //!
 //! \param[in] d3d12_device
@@ -154,7 +172,9 @@ HRESULT create_vertex_shader_from_hlsl(
     const wchar_t*             filename,
     const char*                entry_point,
     const char*                shader_model,
-    ID3DBlob**                 d3d12_vertex_shader);
+    ID3DBlob**                 d3d12_vertex_shader,
+    D3D12_INPUT_ELEMENT_DESCS& d3d12_input_element_descs = nullptr);
+#endif
 
 //! \brief ピクセルシェーダーの作成
 //!
@@ -166,7 +186,6 @@ HRESULT create_vertex_shader_from_hlsl(
 //!
 //! \ret HRESULT
 HRESULT create_pixel_shader_from_hlsl(
-    ID3D12Device*  d3d12_device,
     const wchar_t* filename,
     const char*    entry_point,
     const char*    shader_model,
