@@ -259,7 +259,6 @@ int main(int argc, char* argv[])
 	ASSERT_RETURN(scene->initialize(), -1);
 
 	// main loop.
-	bool app_closed = false;
 	while (true)
 	{
 		MSG msg = {};
@@ -267,9 +266,8 @@ int main(int argc, char* argv[])
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
-			app_closed = msg.message == WM_QUIT;
 		}
-		if (app_closed)
+		if (msg.message == WM_QUIT)
 		{
 			break;
 		}
