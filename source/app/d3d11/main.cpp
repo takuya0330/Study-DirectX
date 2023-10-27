@@ -259,23 +259,19 @@ int main(int argc, char* argv[])
 	ASSERT_RETURN(scene->initialize(), -1);
 
 	// main loop.
-	while (true)
-	{
+	while (true) {
 		MSG msg = {};
-		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
-		{
+		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		if (msg.message == WM_QUIT)
-		{
+		if (msg.message == WM_QUIT) {
 			break;
 		}
 
 		context.begin_frame();
 		{
-			if (scene)
-			{
+			if (scene) {
 				scene->update();
 			}
 		}
