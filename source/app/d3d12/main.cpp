@@ -278,7 +278,6 @@ public:
 
 		MSWRL::ComPtr<ID3DBlob> vertex_shader;
 		hr = dxlib::d3d12::create_vertex_shader_from_hlsl(
-		    m_d3d12_device,
 		    L"../../asset/shader/static_mesh_pc_vs.hlsl",
 		    "main",
 		    "vs_5_0",
@@ -287,7 +286,6 @@ public:
 
 		MSWRL::ComPtr<ID3DBlob> pixel_shader;
 		hr = dxlib::d3d12::create_pixel_shader_from_hlsl(
-		    m_d3d12_device,
 		    L"../../asset/shader/static_mesh_pc_ps.hlsl",
 		    "main",
 		    "ps_5_0",
