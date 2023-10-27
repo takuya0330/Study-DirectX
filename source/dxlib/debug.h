@@ -38,7 +38,7 @@ inline void console(const wchar_t* msg)
 } // namespace detail
 
 //! \brief コンソールに出力します
-//! 
+//!
 //! \param[in] format
 //! \param[in] ...
 inline void log(const char* format, ...)
@@ -113,8 +113,7 @@ inline void log(const wchar_t* format, ...)
 #define _LOG_ERROR_HRESULT(hr) _LOG_ERROR_MSG("hr = 0x%08X\n", hr);
 
 #define RETURN_IF_FAILED(hr, ...) \
-	if (FAILED(hr))               \
-	{                             \
+	if (FAILED(hr)) {             \
 		_LOG_ERROR_HRESULT(hr);   \
 		return __VA_ARGS__;       \
 	}
@@ -122,8 +121,7 @@ inline void log(const wchar_t* format, ...)
 #define ASSERT(expr) assert(expr)
 
 #define ASSERT_RETURN(expr, ...) \
-	if (!(expr))                 \
-	{                            \
+	if (!(expr)) {               \
 		assert(expr);            \
 		return __VA_ARGS__;      \
 	}

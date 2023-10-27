@@ -39,10 +39,8 @@ HRESULT compile_shader(ID3DBlob** blob, const wchar_t* filename, const char* ent
 
 DXGI_FORMAT conv_format(D3D_REGISTER_COMPONENT_TYPE type, BYTE mask)
 {
-	if (mask == 0x01)
-	{
-		switch (type)
-		{
+	if (mask == 0x01) {
+		switch (type) {
 		case D3D_REGISTER_COMPONENT_UINT32:
 			return DXGI_FORMAT_R32_UINT;
 		case D3D_REGISTER_COMPONENT_SINT32:
@@ -53,10 +51,8 @@ DXGI_FORMAT conv_format(D3D_REGISTER_COMPONENT_TYPE type, BYTE mask)
 			return DXGI_FORMAT_UNKNOWN;
 		}
 	}
-	else if (mask == 0x03)
-	{
-		switch (type)
-		{
+	else if (mask == 0x03) {
+		switch (type) {
 		case D3D_REGISTER_COMPONENT_UINT32:
 			return DXGI_FORMAT_R32G32_UINT;
 		case D3D_REGISTER_COMPONENT_SINT32:
@@ -67,10 +63,8 @@ DXGI_FORMAT conv_format(D3D_REGISTER_COMPONENT_TYPE type, BYTE mask)
 			return DXGI_FORMAT_UNKNOWN;
 		}
 	}
-	else if (mask == 0x07)
-	{
-		switch (type)
-		{
+	else if (mask == 0x07) {
+		switch (type) {
 		case D3D_REGISTER_COMPONENT_UINT32:
 			return DXGI_FORMAT_R32G32B32_UINT;
 		case D3D_REGISTER_COMPONENT_SINT32:
@@ -81,10 +75,8 @@ DXGI_FORMAT conv_format(D3D_REGISTER_COMPONENT_TYPE type, BYTE mask)
 			return DXGI_FORMAT_UNKNOWN;
 		}
 	}
-	else if (mask == 0x0F)
-	{
-		switch (type)
-		{
+	else if (mask == 0x0F) {
+		switch (type) {
 		case D3D_REGISTER_COMPONENT_UINT32:
 			return DXGI_FORMAT_R32G32B32A32_UINT;
 		case D3D_REGISTER_COMPONENT_SINT32:

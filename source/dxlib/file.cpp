@@ -10,8 +10,7 @@ bool load_file(const wchar_t* filename, std::unique_ptr<uint8_t[]>& file_data, u
 {
 	std::ifstream ifs;
 	ifs.open(filename, std::ifstream::in | std::ifstream::binary);
-	if (ifs.fail()) 
-	{
+	if (ifs.fail()) {
 		ifs.close();
 		_LOG_ERROR_MSG(L"%s open failed.\n", filename);
 		return false;

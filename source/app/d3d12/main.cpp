@@ -93,8 +93,7 @@ struct d3d12_context
 		ASSERT_RETURN(SUCCEEDED(hr), false);
 
 		D3D12_CPU_DESCRIPTOR_HANDLE back_buffer_handle = d3d12_back_buffer_heap->GetCPUDescriptorHandleForHeapStart();
-		for (UINT32 i = 0; i < dxlib::dxgi::default_back_buffer_count; ++i)
-		{
+		for (UINT32 i = 0; i < dxlib::dxgi::default_back_buffer_count; ++i) {
 			hr = dxlib::d3d12::create_back_buffer(
 			    d3d12_device.Get(),
 			    dxgi_swap_chain.Get(),
@@ -200,8 +199,7 @@ struct d3d12_context
 
 		back_buffer_index = dxgi_swap_chain->GetCurrentBackBufferIndex();
 
-		if (d3d12_fence->GetCompletedValue() < d3d12_fence_values[back_buffer_index])
-		{
+		if (d3d12_fence->GetCompletedValue() < d3d12_fence_values[back_buffer_index]) {
 			auto fence_event = CreateEvent(nullptr, false, false, nullptr);
 			d3d12_fence->SetEventOnCompletion(d3d12_fence_values[back_buffer_index], fence_event);
 #pragma warning(push)
@@ -458,23 +456,19 @@ int main(int argc, char* argv[])
 	ASSERT_RETURN(scene->initialize(), -1);
 
 	// main loop.
-	while (true)
-	{
+	while (true) {
 		MSG msg = {};
-		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
-		{
+		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 		}
-		if (msg.message == WM_QUIT)
-		{
+		if (msg.message == WM_QUIT) {
 			break;
 		}
 
 		context.begin_frame();
 		{
-			if (scene)
-			{
+			if (scene) {
 				scene->update();
 			}
 		}
