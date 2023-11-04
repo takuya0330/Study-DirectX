@@ -79,6 +79,9 @@
     <ClInclude Include="..\..\..\..\..\source\dxlib\window.h">
       <Filter>source\dxlib</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\source\app\d3d11\d3d11_scene_triangle.h">
+      <Filter>source\app\d3d11</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\source\app\d3d11\main.cpp">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\source\dxlib\window.cpp">
       <Filter>source\dxlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\source\app\d3d11\d3d11_scene_triangle.cpp">
+      <Filter>source\app\d3d11</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

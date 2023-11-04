@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\source\app\d3d12\d3d12_scene_triangle.cpp" />
     <ClCompile Include="..\..\..\..\..\source\app\d3d12\main.cpp" />
     <ClCompile Include="..\..\..\..\..\source\dxlib\d3d12_api.cpp" />
     <ClCompile Include="..\..\..\..\..\source\dxlib\dxgi_api.cpp" />
@@ -26,6 +27,7 @@
     <ClCompile Include="..\..\..\..\..\source\dxlib\window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\source\app\d3d12\d3d12_scene_triangle.h" />
     <ClInclude Include="..\..\..\..\..\source\app\scene_base.h" />
     <ClInclude Include="..\..\..\..\..\source\dxlib\camera.h" />
     <ClInclude Include="..\..\..\..\..\source\dxlib\d3d12_api.h" />

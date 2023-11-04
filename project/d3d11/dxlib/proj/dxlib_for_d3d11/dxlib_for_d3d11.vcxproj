@@ -153,6 +153,7 @@
     </FxCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\source\app\d3d11\d3d11_scene_triangle.h" />
     <ClInclude Include="..\..\..\..\..\source\app\scene_base.h" />
     <ClInclude Include="..\..\..\..\..\source\dxlib\camera.h" />
     <ClInclude Include="..\..\..\..\..\source\dxlib\d3d11_api.h" />
@@ -169,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\source\app\d3d11\main.cpp" />
+    <ClCompile Include="..\..\..\..\..\source\app\d3d11\d3d11_scene_triangle.cpp" />
     <ClCompile Include="..\..\..\..\..\source\dxlib\d3d11_api.cpp" />
     <ClCompile Include="..\..\..\..\..\source\dxlib\dxgi_api.cpp" />
     <ClCompile Include="..\..\..\..\..\source\dxlib\file.cpp" />
